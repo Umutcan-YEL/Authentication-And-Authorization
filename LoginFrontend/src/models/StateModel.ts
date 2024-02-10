@@ -6,4 +6,5 @@ export type StateModel = {
   userData: Object;
   token: String;
   isAuthenticated: boolean;
+  admin: boolean;
 };

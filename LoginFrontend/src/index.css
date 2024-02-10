@@ -69,3 +69,22 @@ body {
 .bluebg {
   background-color: #2ab7ca;
 }
+
+.blackbg {
+  background-color: #0c090a;
+}
+.home {
+  background-image: url(./assets/Homebg.jpg);
+}
+.admin {
+  background-image: url(./assets/Adminbg.jpg);
+}
+
+.text-white {
+  color: white;
+}
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+}

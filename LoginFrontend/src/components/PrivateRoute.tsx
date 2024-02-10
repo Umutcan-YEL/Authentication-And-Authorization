@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 import { StateModel } from "../models/StateModel";
-const ProtectedRoute = () => {
+const PrivateRoute = () => {
+  const admin = useSelector((state: StateModel) => state.admin);
   const isAuthenticated = useSelector(
     (state: StateModel) => state.isAuthenticated
   );
 
-  if (isAuthenticated) {
+  if (admin && isAuthenticated) {
     return <Outlet />;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 };
 
-export default ProtectedRoute;
+export default PrivateRoute;

@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { LogIn, LogOut, Register } from "../../services/AuthService";
 import { LoginModel, RegisterModel } from "../../models/RequestModels";
 import { StateModel } from "../../models/StateModel";
+import sessionStorage from "redux-persist/es/storage/session";
 
 const initialState: StateModel = {
   isLoading: false,
@@ -12,6 +13,7 @@ const initialState: StateModel = {
   errorMessage: null,
   userData: null,
   token: null,
+  admin: false,
 };
 
 export const login = createAsyncThunk(
@@ -47,6 +49,7 @@ const authSlice = createSlice({
         state.userData = action.payload.user;
         state.isAuthenticated = true;
         state.token = action.payload.token;
+        state.admin = action.payload.admin
       })
       .addCase(login.rejected, (state) => {
         state.isLoading = false;
@@ -62,6 +65,8 @@ const authSlice = createSlice({
         state.userData = null;
         state.isAuthenticated = false;
         state.token = null;
+        state.admin = false;
+        sessionStorage.removeItem("persist:root");
       })
       .addCase(logout.rejected, (state) => {
         state.isLoading = false;

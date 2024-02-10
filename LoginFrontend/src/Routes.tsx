@@ -3,6 +3,8 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
+import Admin from "./pages/Admin";
+import PrivateRoute from "./components/PrivateRoute";
 
 function Routes() {
   return (
@@ -12,7 +14,9 @@ function Routes() {
 
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<Home />} />
-        {/** protected urls should be written here ... */}
+      </Route>
+      <Route element={<PrivateRoute />}>
+        <Route path="/admin" element={<Admin />} />{" "}
       </Route>
     </Router>
   );

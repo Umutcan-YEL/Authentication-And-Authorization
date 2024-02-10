@@ -1,6 +1,6 @@
 import { Button, Form, Input } from "antd";
 import { useDispatch } from "react-redux";
-import { signup } from "../../redux/auth/authSlice";
+import { signup } from "../../redux/slices/authSlice";
 import { RegisterModel } from "../../models/RequestModels";
 import { AppDispatch } from "../../redux/store";
 import { useNavigate } from "react-router-dom";

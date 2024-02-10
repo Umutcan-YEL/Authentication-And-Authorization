@@ -16,6 +16,8 @@ export const LogIn = async (data) => {
     const response = await axios.post(`${baseURL}login/`, body, {
       withCredentials: false,
     });
+    console.log(response);
+
     return response.data;
   } catch (error) {
     console.log(error);
@@ -40,6 +42,5 @@ export const Register = async (data) => {
 };
 
 export const LogOut = async () => {
-  localStorage.removeItem("token");
   return "Succesfully LogOut !";
 };

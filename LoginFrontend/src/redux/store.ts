@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import authReducer from "./auth/authSlice";
-import storage from "redux-persist/lib/storage";
+import authReducer from "./slices/authSlice";
 
 import { persistReducer, persistStore } from "redux-persist";
+import sessionStorage from "redux-persist/es/storage/session";
 
 const persistConfig = {
   key: "root",
-  storage,
-  whitelist: ["token", "isAuthenticated"],
+  storage: sessionStorage,
+  whitelist: ["token", "isAuthenticated", "admin"],
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);
