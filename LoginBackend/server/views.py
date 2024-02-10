@@ -18,7 +18,7 @@ def login(request):
         return Response({"detail": "Not Found."}, status=status.HTTP_404_NOT_FOUND)
     token, created = Token.objects.get_or_create(user=user)
     serializer = UserSerializer(instance=user)
-    return Response({"token": token.key, "user": serializer.data})
+    return Response({"token": token.key, "user": serializer.data, "admin": user.is_superuser})
 
 
 @api_view(['POST'])
@@ -29,7 +29,8 @@ def signup(request):
         user = User.objects.get(username=request.data['username'])
         user.set_password(request.data['password'])
         user.save()
-        return Response({"user": serializer.data, "role": "user"})
+
+        return Response({"user": serializer.data})
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
