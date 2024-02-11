@@ -19,7 +19,8 @@ DEBUG = False
 ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", ".localhost"]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Replace with your allowed origin(s)
+    "http://localhost:5173",
+    "https://umtloginfrontend.netlify.app"
 ]
 # Application definition
 
