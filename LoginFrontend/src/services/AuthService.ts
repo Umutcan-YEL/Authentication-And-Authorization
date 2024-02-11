@@ -4,7 +4,7 @@ import { LoginModel, RegisterModel } from "../models/RequestModels";
 axios.defaults.withCredentials = true;
 
 const baseURL =
-  "umtloginbackend.vercel.app/";
+  "https://umtloginbackend.vercel.app/";
 
 export const LogIn = async (data) => {
   const body: LoginModel = {
