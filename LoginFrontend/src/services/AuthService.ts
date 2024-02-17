@@ -13,9 +13,12 @@ export const LogIn = async (data) => {
   };
 
   try {
-    const response = await axios.post(`${baseURL}login/`, body,{
-  credentials: "include",
-});
+    const response = await axios.post(`${baseURL}login/`, body,   {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        withCredentials: true, 
+      });
     console.log(response);
 
     return response.data;
