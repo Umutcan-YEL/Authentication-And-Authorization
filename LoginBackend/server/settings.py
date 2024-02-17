@@ -16,9 +16,9 @@ SECRET_KEY = 'django-insecure-7reefeaq-2$8l=_pf7kg5u+qj5175@*!xvfp_$ys_qp5d03^6%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", ".localhost","https://umtloginfrontend.netlify.app/"]
 
-CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
