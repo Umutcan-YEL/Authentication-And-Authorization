@@ -13,7 +13,9 @@ export const LogIn = async (data) => {
   };
 
   try {
-    const response = await axios.post(`${baseURL}login/`, body);
+    const response = await axios.post(`${baseURL}login/`, body,{
+  credentials: "include",
+});
     console.log(response);
 
     return response.data;
