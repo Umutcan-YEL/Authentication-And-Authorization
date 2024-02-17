@@ -13,12 +13,11 @@ export const LogIn = async (data) => {
   };
 
   try {
-    const response = await axios.post(`${baseURL}login/`, body,   {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        withCredentials: true, 
-      });
+    const response = await axios.post(`${baseURL}login/`, body,  withCredentials: true, 
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'https://umtloginfrontend.netlify.app',  // Specify the allowed origin
+  },);
     console.log(response);
 
     return response.data;
