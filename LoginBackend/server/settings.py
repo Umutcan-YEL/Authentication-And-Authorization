@@ -17,9 +17,7 @@ SECRET_KEY = 'django-insecure-7reefeaq-2$8l=_pf7kg5u+qj5175@*!xvfp_$ys_qp5d03^6%
 DEBUG = False
 
 
-ALLOWED_HOSTS=['*']
-CORS_ORIGIN_ALLOW_ALL = True
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,6 +41,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+ALLOWED_HOSTS=['*']
+CORS_ALLOWED_ORIGINS = [
+    "https://umtloginfrontend.netlify.app",
+ 
+]
+
 
 ROOT_URLCONF = 'server.urls'
 
