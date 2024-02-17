@@ -42,7 +42,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", ".localhost"]
 CORS_ALLOWED_ORIGINS = [
     "https://umtloginfrontend.netlify.app",
  
